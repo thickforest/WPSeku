@@ -7,6 +7,7 @@ from core.lib import wp_checker
 from core.lib import wp_colors
 from core.lib import wp_print
 from core.lib import wp_request
+import sys
 import re
 import urllib
 
@@ -46,6 +47,7 @@ class WPBrute:
 				####
 				elif re.search('<name>isAdmin</name><value><boolean>1</boolean>',html):
 					self.print_.dprint("Valid ADMIN Credentials: \"%s\" - \"%s\""%(self.user,pwd.split("\n")[0]))
+					sys.exit()
 			except Exception,e:
 				pass
 		sys.exit()

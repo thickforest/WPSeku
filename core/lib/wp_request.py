@@ -48,7 +48,7 @@ class WPRequest:
 
 		# Response
 		try:
-			resp = urllib2.urlopen(req)
+			resp = urllib2.urlopen(req, timeout=10)
 		except urllib2.HTTPError,e:
 			resp = e 
 		return resp.read().decode('utf-8'),resp.geturl(),resp.getcode(),resp.info()
